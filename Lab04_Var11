@@ -66,12 +66,37 @@ for (int i = 0; i<D-1+N; i++){
 if (nums[i]==Y){   nomerN=i;
 }
 }
+int P=0;
 if (nomerN>0){
-cout << "Элемент находится в массиве под номером : "<< nomerN;
-cout <<"\n";
-cout << "Элемент по счёту является  :  " << nomerN+1;
+while (Y!=nums[P]){
+P=P+1;
+}
+P=P+1;
+//cout << "Элемент находится в массиве под номером : "<< nomerN;
+//cout <<"\n";
+cout << "Для нахождения данного числа пришлось перебрать " << P <<  " чисел/числа";
 }
 if (nomerN<0){
-cout << "Данный элемент не найден";}
+cout << "Данный элемент не найден";
+}
+cout <<"\n";
+int ia,ja,xa;
+for(ia=1;ia<D-1+N;ia++)
+{
+  xa=nums[ia];
+  ja=ia-1;
+  while(xa<nums[ja]&&ja>=0)
+  {
+    nums[ja+1]=nums[ja];
+    ja--;
+  }
+  nums[ja+1]=xa;
+}
+cout << "Массив после сортировки по возростанию имеет вид : " <<"\n";
+for (int i = 0; i<D-1+N; i++){
+cout <<  " " << nums[i] ;
+}
+
+
 return 0;
 } 
