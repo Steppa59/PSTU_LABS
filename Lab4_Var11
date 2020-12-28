@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+// задание от 08.12.20
+int nums[500];
+int N;
+cout << " Введите длину массива :  ";
+cin >> N;
+
+for (int i = 0; i < N; i++)
+{
+nums[i] = 1 + rand()%100;
+cout << " "  << nums[i];
+}
+
+cout << endl;
+cout << " После удаления последних 5 элементов, массив имеет вид:  ";
+cout << endl;
+for (int i = N; i >= N-5; i=i-1)
+{
+ nums[i] = 0;   
+}
+
+
+for (int i = 0; i < N-5; i++)
+{
+cout << " "  << nums[i];
+}
+cout << endl;
+cout << " После добавления в начало 3 элементов с *особыми значениям*, массив имеет вид:  ";
+cout << endl;
+//********************************************
+//особое значение = M(i+1) +2;
+//********************************************
+for (int i=N-5+3;i>=3;i--) {
+nums[i] = nums[i-3];
+}
+for (int i = 0; i < 3; i++) {
+nums[i] = nums[i+4]+2; 
+}
+
+for (int i = 0; i < N-5+3; i++) {
+cout << " "  << nums[i];
+}
+return 0;
+} 
