@@ -2,6 +2,7 @@
 using namespace std;
 int main()
 {
+// задание от 01.12.20
 int nums[500];
 int D;
 setlocale(LC_ALL, "Russian");
