@@ -1,0 +1,52 @@
+#include <iostream>
+
+using namespace std;
+int main()
+{   
+int n,s;
+cout<<"Введите размерность(n) матрицы(n x n) : ";
+cin>>n;
+int nums[n][n];
+for (int i=1; i<=n ; i++){   
+for (int j=1; j<=n;j++){
+nums[i][j] = rand()%2;
+cout<<nums[i][j]<<" " ;
+}
+cout<<endl;
+}
+int V=-1;
+int U=-1;
+cout<<"Введите строку которую нужно проверить на возрастание/убывание: ";
+cin>>s;
+for (int j=2; j<=n; j++) {
+if (nums[s][j]>=nums[s][j-1]){
+V=1;
+}
+else {
+V=0;    
+}
+}
+for (int j=2; j<=n; j++) {
+if (nums[s][j]<=nums[s][j-1]){
+U=1;
+}
+else {
+U=0;    
+}
+}
+if (V==1 && U==0){
+cout<<"Числа в строке упорядочены по возрастанию ";
+}
+if (V==0 && U==1){
+cout<<"Числа в строке упорядочены по убыванию ";
+}
+if (V==0 && U==0){
+cout<<"Числа в строке ни убывают, ни возрастают ";
+}
+if (V==1 && U==1){
+cout<<"Все числа в строке равны между собой ";
+}
+
+
+  return 0;
+}
