@@ -1,1 +1,29 @@
-Not ready
+#include <iostream>
+
+using namespace std;
+float proiz(float a, float b);
+float proiz(float a1,float a2,float b1,float b2);
+
+int main()  {
+
+float a, b;
+float a1,a2,b1,b2;
+
+cout << " Введите 2 десятичных числа для произведениия: ";
+cin >> a >> b;
+cout << "Результат: " << proiz(a,b) << endl;
+cout << endl;
+cout << " Введите 2 числа, каждое из которых представлено в виде a/b(Обязательно используйте пробел для разделения чисел, a и b)";
+// пример ввода данных a/b *  c/d  [a b c d]
+cin >> a1 >> a2 >> b1 >> b2;
+cout << "Результат: " << proiz(a1,a2,b1,b2);
+}
+float proiz(float a, float b)
+{
+return a * b; 
+}
+
+float proiz(float a1, float a2, float b1, float b2) 
+{
+  return a1*b1/a2/b2;
+}
