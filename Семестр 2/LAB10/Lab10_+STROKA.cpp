@@ -28,7 +28,7 @@ delete[]arr[i];
 }
 delete[]arr;
 }
-//column
+
 int** Add_Row(int** arr, int& height, int width)
 {
 int** arr_2;
@@ -66,43 +66,6 @@ return arr;
 }
 }
 
-//================================
-int** Add_Column(int** arr, int height, int& width)
-{
-int** arr_22;
-int pos2;
-cout << "Введите номер cтолбца, который нужно добавить: ";
-cin >> pos2;
-pos2=pos2 - 1;
-if (pos2 > width - 1)
-{
-cout << "Недопустимое значение\n";
-return 0;
-}
-else {
-arr_22 = Create(height , width + 1);
-for (int i = 0; i < height; i++) {
-for (int j = 0; j < pos2; j++) {
-arr_22[i][j] = arr[i][j];
-}
-}
-for (int i = 0; i < height; i++) {
-for (int j = 0; j < width - pos2; j++){
-arr_22[i][j + pos2 +1] = arr[i][j+pos2];
-}
-}
-width++;
-for (int i = 0; i < height; i++){
-for (int j = 0; j < pos2; j++)   {
-arr_22[i][j] =10 + rand() % 89;
-}
-}
-Del(arr, width - 1);
-arr = arr_22;
-return arr;
-}
-}
-//================================
 
 int width, height;
 int choice;
@@ -133,15 +96,6 @@ cout << "\n";
 }
 cout << "\n";
 Del(arr, height);
-//================================
-arr = Add_Column(arr, height, width);
-for (int i = 0; i < height; i++) {
-for (int j = 0; j < width; j++)  {
-cout  << arr[i][j] << " ";
-}
-cout << "\n";
-}
-cout << "\n";
-Del(arr, width);
+
 
 }
