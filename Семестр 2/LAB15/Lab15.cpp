@@ -83,7 +83,7 @@ cin >> a;
 
 switch (a) {
 case 0: METOD_Shella(string, n); break;
-case 1: METOD_Hoara(string, 0, n - 1);; break;
+case 1: METOD_Hoara(string, 0, n - 1); break;
 default: cout << "Неизвестная операция. Сортировка не выполнена." << endl;
 }
 cout << "=============================================================="<< endl;
