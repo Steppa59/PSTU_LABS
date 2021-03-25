@@ -1,5 +1,5 @@
-#include iostream
-
+#include <iostream>
+#include <string>
 using namespace std;
 
 struct videokas_t {
@@ -10,59 +10,59 @@ struct videokas_t {
 };
 
 int main() {
-setlocale(LC_ALL, Russian);
+setlocale(LC_ALL, "Russian" );
 videokas_t videokas[10];
 
-for(int i = 1; i = 10; i++) {
+for(int i = 1; i <= 10; i++) {
 videokas[i].price = 0;
 }
 
-    videokas[1].name = Побег из Шоушенка;
-    videokas[1].director = Фрэнк Дарабонт;
+    videokas[1].name = "Побег из Шоушенка" ;
+    videokas[1].director = "Фрэнк Дарабонт";
     videokas[1].ftime = 130;
     videokas[1].price = 219;
     
-    videokas[2].name = Марсианин;
-    videokas[2].director = Ридли Скотта;
+    videokas[2].name = "Марсианин";
+    videokas[2].director = "Ридли Скотта";
     videokas[2].ftime = 132;
     videokas[2].price = 199;
 
-    videokas[3].name = Интерстеллар;
-    videokas[3].director = Кристофен Нолан;
+    videokas[3].name = "Интерстеллар";
+    videokas[3].director = "Кристофен Нолан";
     videokas[3].ftime = 150;
     videokas[3].price = 219;
     
-    videokas[4].name = Притяжение;
-    videokas[4].director = Фёдор Бондарчук;
+    videokas[4].name = "Притяжение";
+    videokas[4].director = "Фёдор Бондарчук";
     videokas[4].ftime = 130;
     videokas[4].price = 100;
     
-    videokas[5].name = Приключения Электроника;
-    videokas[5].director = Константин Бромберг;
+    videokas[5].name = "Приключения Электроника";
+    videokas[5].director = "Константин Бромберг";
     videokas[5].ftime = 192;
     videokas[5].price = 200;
     
-    videokas[6].name = Платформа;
-    videokas[6].director = Гальдер Гастелу-Уррутия;
+    videokas[6].name = "Платформа";
+    videokas[6].director = "Гальдер Гастелу-Уррутия";
     videokas[6].ftime = 125;
     videokas[6].price = 150;
 
-    for(int i = 1; i = 10; i++) {
-    if ( videokas[i].price  0 ) {
-    cout  i  . ;
-    cout   Название   videokas[i].name  endl;
-    cout     Режиссер   videokas[i].director  endl;
-    cout     Продолжительность   videokas[i].ftime  endl;
-    cout     Цена   videokas[i].price  endl  endl;
+    for (int i = 1; i <= 10; i++) {
+    if ( videokas[i].price > 0 ) {
+    cout << i <<  ". " ;
+    cout <<  "Название: " <<   videokas[i].name << endl;
+    cout  <<   "Режиссер: " <<  videokas[i].director << endl;
+    cout   <<  "Продолжительность: " <<   videokas[i].ftime << endl;
+    cout  <<   "Цена: "<<   videokas[i].price << endl << endl;
     
 }
 }
 
     int priceLim = 0;
-    cout  Введите лимит по цене на видеокассету (100-300)   endl;
-    cin  priceLim ;
-    for(int i = 1; i = 10; i++) {
-    if(videokas[i].price   priceLim ) {
+    cout << "Введите лимит по цене на видеокассету (100-300)"  << endl;
+    cin >> priceLim ;
+    for(int i = 1; i <= 10; i++) {
+    if(videokas[i].price >  priceLim ) {
     videokas[i].price = 0 ;    
     }
     }
@@ -72,10 +72,10 @@ videokas[i].price = 0;
     
     
     int K = 0;
-    for(int i = 1; i = 9; i++) {
+    for(int i = 1; i < 9; i++) {
     if (videokas[i].price == 0 ) {
     K = i;
-    while ((videokas[K].price == 0)&&(K9)) {
+    while ((videokas[K].price == 0)&&(K<9)) {
     K++;
     }
     videokas[i].name = videokas[K].name;
@@ -86,52 +86,52 @@ videokas[i].price = 0;
     }
     }
     
-    cout  =======================================================  endl;
-    cout  Список фильмов удовлетворяющий вам по цене    endl;
-    cout  =======================================================  endl;
+    cout  << "=======================================================" << endl;
+    cout  << "Список фильмов удовлетворяющий вам по цене"   << endl;
+    cout << "=======================================================" << endl;
 
-    for(int i = 1; i = 10; i++) {
-    if(videokas[i].price   0 )  {  
-    cout  i  . ;
-    cout   Название   videokas[i].name  endl;
-    cout     Режиссер   videokas[i].director  endl;
-    cout     Продолжительность   videokas[i].ftime  endl;
-    cout     Цена   videokas[i].price  endl  endl;
+    for(int i = 1; i <= 10; i++) {
+    if(videokas[i].price !=  0 )  {  
+    cout << i << ". " ;
+    cout  <<"Название: "  << videokas[i].name << endl;
+    cout     << "Режиссер: " <<  videokas[i].director << endl;
+    cout    << "Продолжительность: " <<  videokas[i].ftime << endl;
+    cout    << "Цена: " <<   videokas[i].price << endl << endl;
     K=i;
     
     }
     }
     
-    cout  Введите еще данные о 3 фильмах    endl;
-    for(int i = K+1; i  K+4; i++) {
+    cout << "Введите еще данные о 3 фильмах"  <<  endl;
+    for(int i = K+1; i < K+4; i++) {
         
-    cout   Название ;
-    cin    videokas[i].name;
+    cout  << "Название: " ;
+    cin   >> videokas[i].name;
     
-    cout   Режиссер ;
-    cin    videokas[i].director ;
+    cout <<  "Режиссер: " ;
+    cin   >> videokas[i].director ;
     
-    cout   Продолжительность ;
-    cin    videokas[i].ftime ;
+    cout <<  "Продолжительность: " ;
+    cin    >> videokas[i].ftime ;
     
-    cout   Цена ;
-    cin    videokas[i].price ;
-    cout  endl;
+    cout   << "Цена: " ;
+    cin   >> videokas[i].price ;
+    cout <<  endl;
     }
     
     
     
-    cout  endl  ================================================================  endl;
-    cout  Список фильмов после всех изменений выглядит следующим образом    endl;
-    cout  ================================================================  endl;
+    cout << endl<<  "================================================================ " << endl;
+    cout << "Список фильмов после всех изменений выглядит следующим образом" <<    endl;
+    cout << "================================================================" <<  endl;
     
-    for(int i = 1; i = 10; i++) {
-    if ((videokas[i].price   0 )&&(videokas[i].ftime  0 ))  {     
-    cout  i  . ;
-    cout   Название   videokas[i].name  endl;
-    cout     Режиссер   videokas[i].director  endl;
-    cout     Продолжительность   videokas[i].ftime  endl;
-    cout     Цена   videokas[i].price  endl  endl;
+    for(int i = 1; i <= 10; i++) {
+    if ((videokas[i].price  > 0 )&&(videokas[i].ftime > 0 ))  {     
+    cout << i <<  "." ;
+    cout  << "Название: " <<   videokas[i].name << endl;
+    cout <<     "Режиссер: "  << videokas[i].director << endl;
+    cout   <<  "Продолжительность: " <<  videokas[i].ftime << endl;
+    cout     << "Цена: " <<   videokas[i].price << endl << endl;
     K++;
     }
     }
