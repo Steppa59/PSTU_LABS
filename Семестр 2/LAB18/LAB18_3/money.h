@@ -34,7 +34,8 @@ money& operator=(const money&);
 money operator+(const money&);
 bool operator<(const money&);
 bool operator>(const money&);
-bool operator==(const money&);
 friend istream& operator>>(istream& in, money& t);
 friend ostream& operator<<(ostream& out, const money& t);
 };
+
+
