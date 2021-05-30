@@ -8,13 +8,13 @@ int x;
 int len=7;
 int result[7]={1000,1000,1000,1000,1000,1000,1000};
 bool flag[7]={false,false,false,false,false,false,false};
-vector <vector<int>> matrix={ {0 ,0 ,0 ,26 ,9 ,0 ,0 },
-	                                                            {0 ,0 ,0 ,17,0 ,0 ,23},
-	                                                            {0 ,0 ,0 ,0 ,13 ,5 ,0 },
-	                                                            {26 ,17 ,0 ,0 ,0 ,42,0  },
-	                                                            {9 ,0 ,13 ,0 ,0 ,0 ,30 },
-                                                                    {0 ,0 ,5 ,42 ,0 ,0 ,19 },
-                                                                    {0 ,23 ,0 ,0 ,30 ,19 ,0 }};
+vector <vector<int>> matrix={{0 ,0 ,0 ,26 ,9 ,0 ,0 },
+	                     {0 ,0 ,0 ,17,0 ,0 ,23},
+	                     {0 ,0 ,0 ,0 ,13,5 ,0 },
+	                     {26,17,0 ,0 ,0 ,42,0  },
+	                     {9 ,0 ,13,0 ,0 ,0 ,30 },
+                             {0 ,0 ,5 ,42,0 ,0 ,19 },
+                             {0 ,23,0 ,0 ,30,19,0 }};
 bool comp(int a,int b) {
 return matrix[x][a]<matrix[x][b];
 }
@@ -22,7 +22,7 @@ int main() {
 SetConsoleCP(1251);
 SetConsoleOutputCP(1251);
 queue <int> QUEUE;
-cout << "Ââåäèòå íà÷àëüíóþ âåðøèíó (1<=x<="<<len<<")\n";
+cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð°Ñ‡Ð°Ð»ÑŒÐ½Ñ‹Ð¹ Ð³Ð¾Ñ€Ð¾Ð´(Ð²ÐµÑ€ÑˆÐ¸Ð½Ñƒ) (1<=x<="<<len<<")\n";
 cin >> x;
 x--;
 result[x]=0;
@@ -48,9 +48,9 @@ flag[x]=true;
 QUEUE.pop();
 if (QUEUE.size()==0) break;
 }
-cout << "Êðàò÷àéøèå ïóòè:\n";
+cout << "ÐšÑ€Ð¾Ñ‚Ñ‡Ð°Ð¹ÑˆÐ¸Ð¹ Ð¿ÑƒÑ‚ÑŒ:\n";
 for (int i=0;i<len;i++) {
-if (result[i]==1000) cout << i+1 << " - íåäîñòóïåí\n";
+if (result[i]==1000) cout << i+1 << " - Ð³Ð¾Ñ€Ð¾Ð´ Ð½ÐµÐ´Ð¾ÑÑ‚ÑƒÐ¿ÐµÐ½(Ð²ÐµÑ€ÑˆÐ¸Ð½Ð°)\n";
 else cout << i+1 << " - " << result[i] << endl;
 }
 system("pause");
